@@ -1,0 +1,90 @@
+@import "https://cdn.jsdelivr.net/npm/literallycanvas@0.5.2/lib/css/literallycanvas.css";
+
+.lc-drawing.with-gui, .literally {
+    height: 75vh !important;
+    overflow: hidden;
+    touch-action: none;
+  }
+  .literally .color-well{
+    display: none;
+  }
+  .literally .lc-drawing.with-gui{
+    left: 50px;
+  }
+  .literally.toolbar-at-top .lc-drawing{
+    top: 0 !important;
+  }
+  .literally .lc-picker{
+    width:50px;
+    border:none;
+	  box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  .literally .lc-picker .lc-picker-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative !important;
+  }
+
+  .literally .horz-toolbar{
+    height: auto !important;
+    width: 35px;
+	  box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+    left: 52px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .literally.toolbar-at-top .lc-options{
+    border-bottom: none;
+
+  }
+  .literally .horz-toolbar .square-toolbar-button{
+    border: none;
+  }
+  .literally .color-well:nth-child(n+2){
+    display: none;
+  }
+  .literally .color-well:nth-child(1){
+    width: 30px;
+  }
+  .literally .lc-options .lc-font-settings{
+    position: absolute;
+    height: auto;
+    padding: 10px 10px;
+    left: 0px;
+	  box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .literally .color-picker-popup{
+    left:40px !important;
+  }
+  .literally .lc-picker .toolbar-button{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+  }
+  .literally .lc-picker .toolbar-button.selected:not(.disabled){
+    background-color: #304d73;
+    color:white;
+  }
+  .literally .lc-picker .toolbar-button{
+      margin: 7px 0;
+      width: 36px;
+      height: 36px;
+  }
+  .literally .horz-toolbar div {
+    display: none;
+  }
+  .literally .lc-options .lc-font-settings {
+    display: flex;
+  }
