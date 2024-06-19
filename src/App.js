@@ -3,8 +3,7 @@ import LC, {LiterallyCanvasReactComponent} from "literallycanvas";
 
 function App() {
   const socket = new WebSocket("wss://free.blr2.piesocket.com/v3/1?api_key=6Y8zCW9ugCr0KaAxxVELRkXL1ntUGNkWp1ql7kxN&notify_self=0")
-  const LcContainer = () => {
-    //Overrriding default LC tools graphics with fontAwesome icons
+      //Overrriding default LC tools graphics with fontAwesome icons
     var tools = document.getElementsByClassName("toolbar-button thin-button")
     for ( var i=0; i<tools.length; i++) {
         var faIconChild = document.createElement('i')
@@ -22,6 +21,8 @@ function App() {
         tools[i].style.backgroundImage = null
         tools[i].appendChild(faIconChild)
     }
+    
+  const LcContainer = () => {
     return(
         <LiterallyCanvasReactComponent
             onInit={canvasInit}
