@@ -3,24 +3,7 @@ import LC, {LiterallyCanvasReactComponent} from "literallycanvas";
 
 function App() {
   const socket = new WebSocket("wss://free.blr2.piesocket.com/v3/1?api_key=6Y8zCW9ugCr0KaAxxVELRkXL1ntUGNkWp1ql7kxN&notify_self=0")
-      //Overrriding default LC tools graphics with fontAwesome icons
-    var tools = document.getElementsByClassName("toolbar-button thin-button")
-    for ( var i=0; i<tools.length; i++) {
-        var faIconChild = document.createElement('i')
-        if([...tools][i].title==="Text"){
-            faIconChild.className = "fa-solid fa-keyboard"
-        }else if ([...tools][i].title==="Pan") {
-            faIconChild.className = "fa-solid fa-up-down-left-right"
-        }else if ([...tools][i].title==="Zoom out") {
-            faIconChild.className = "fa-solid fa-magnifying-glass-minus"
-        }else if ([...tools][i].title==="Zoom in") {
-            faIconChild.className = "fa-solid fa-magnifying-glass-plus"
-        }else{
-            faIconChild.className = "fa-solid fa-"+ [...tools][i].title.toLowerCase()
-        }
-        tools[i].style.backgroundImage = null
-        tools[i].appendChild(faIconChild)
-    }
+
     
   const LcContainer = () => {
     return(
@@ -39,6 +22,24 @@ function App() {
     )}
 
   const canvasInit = async lc => {
+          //Overrriding default LC tools graphics with fontAwesome icons
+          var tools = document.getElementsByClassName("toolbar-button thin-button")
+          for ( var i=0; i<tools.length; i++) {
+              var faIconChild = document.createElement('i')
+              if([...tools][i].title==="Text"){
+                  faIconChild.className = "fa-solid fa-keyboard"
+              }else if ([...tools][i].title==="Pan") {
+                  faIconChild.className = "fa-solid fa-up-down-left-right"
+              }else if ([...tools][i].title==="Zoom out") {
+                  faIconChild.className = "fa-solid fa-magnifying-glass-minus"
+              }else if ([...tools][i].title==="Zoom in") {
+                  faIconChild.className = "fa-solid fa-magnifying-glass-plus"
+              }else{
+                  faIconChild.className = "fa-solid fa-"+ [...tools][i].title.toLowerCase()
+              }
+              tools[i].style.backgroundImage = null
+              tools[i].appendChild(faIconChild)
+          }
         const sendDrawingtoWebsocket = async (data) => {
             data&&socket.send(JSON.stringify(data))
         }
